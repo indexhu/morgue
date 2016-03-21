@@ -9,17 +9,17 @@ if ($forum_links["status"] == Links::OK) {
 
 ?>
 <div class="row-fluid">
-  <legend>Forums</legend>
+  <legend>Linkek</legend>
   <div class="editable_hidden" style="display:none;">
-  <input type="text" placeholder="Enter link to forum post" id="forum_url" name="forum_url" class="input-xxlarge" value="<?php echo isset($forum_url) ? $forum_url : '' ?>" />
-  <input type="text" placeholder="Forum post description" id="forum_comment" name="forum_comment" class="input-xxlarge" maxlength="100" value="<?php echo isset($forum_comment) ? $forum_comment : ''?>" />
+  <input type="text" placeholder="URL" id="forum_url" name="forum_url" class="input-xxlarge" value="<?php echo isset($forum_url) ? $forum_url : '' ?>" />
+  <input type="text" placeholder="Leírás" id="forum_comment" name="forum_comment" class="input-xxlarge" maxlength="100" value="<?php echo isset($forum_comment) ? $forum_comment : ''?>" />
   </br>
-  <button  onclick="showForumLink(); return false" class="btn">Save Forum Entry</button>
+  <button  onclick="showForumLink(); return false" class="btn">Link mentése</button>
   </div>
   <table id="forumlinks" class="table table-striped">
     <thead>
       <tr>
-        <th>Forum Posts</th>
+        <th></th>
       </tr>
     </thead>
     <tbody id="forumlinks_table_body">

@@ -3,10 +3,10 @@
       <table class="table table-striped">
         <thead>
           <tr>
-            <th>Title</th>
-            <th>Start Time</th>
-            <th>End Time</th>
-            <th>Severity</th>
+            <th>Cím</th>
+            <th>Kezdete</th>
+            <th>Vége</th>
+            <th>Súlyosság</th>
           </tr>
         </thead>
       <?php

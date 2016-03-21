@@ -35,7 +35,7 @@
 
       </ul>
           <div id="search_div">
-              <input id="search_field" type="text" placeholder="Search">
+              <input id="search_field" type="text" placeholder="Keresés">
           </div>  
           <script type="text/javascript" src="/features/search/js/search.js"></script>
       </div>

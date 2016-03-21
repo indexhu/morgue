@@ -2,7 +2,7 @@
 <?php if ($event['deleted']): ?>
     <div class="row-fluid">
         <div class="alert">
-            <strong>Heads up!</strong> This postmortem was deleted.
+            <strong>Figyelem!</strong> Ezt a postmortemet törölték.
         </div>
     </div>
 <?php endif; ?>
@@ -11,13 +11,13 @@
 <!-- Edit Status -->
 <div class="row-fluid">
     <?php if ($edit_status === Postmortem::EDIT_UNLOCKED): ?>
-        <a id="edit_status" href="javascript:void(0)"><div id="edit_div" class="alert alert-info" role="alert">Click here to make changes</div></a>
+        <a id="edit_status" href="javascript:void(0)"><div id="edit_div" class="alert alert-info" role="alert">Szerkesztés</div></a>
     <?php endif; ?>
     <?php if ($edit_status === Postmortem::EDIT_LOCKED): ?>
-        <div id="edit_status" class="alert alert-danger" role="alert"><strong><?php echo $event["modifier"] ?></strong> is currently editing this page.</div>
+        <div id="edit_status" class="alert alert-danger" role="alert"><strong><?php echo $event["modifier"] ?></strong> éppen szerkeszti ezt az oldalt.</div>
     <?php endif; ?>
     <?php if ($edit_status === Postmortem::EDIT_CLOSED): ?>
-        <div id="edit_status" class="alert alert-warning" role="alert"><strong>Heads up!</strong> The edit period for this event has expired.</div>
+        <div id="edit_status" class="alert alert-warning" role="alert"><strong>Heads up!</strong> Ezt az oldalt már nem lehet szerkeszteni.</div>
     <?php endif; ?>
 </div>
 
@@ -30,21 +30,13 @@
       value="<?php echo $event["title"] ?>" required disabled>
 </div>
 
-<!-- Small Print -->
-<div class="row-fluid">
-  <i class="muted"><small>All times are currently shown in <?php echo getUserTimezone() ?> time.</small></i>
-</div>
-<div class="row-fluid">
-  <br/>
-</div>
-
 <!-- Time and Severity (in two columns) -->
 <div class="row-fluid">
   <!-- Editable Controls -->
   <form class="form-horizontal">
   <div class="span6">
     <div class="control-group">
-      <label class="control-label" id="event-start-time">Start time: </label>
+      <label class="control-label" id="event-start-time">Kezdete: </label>
       <div class="controls controls-row">
         <input id="event-start-input-date" name="event-start-input-date"
                class="input-small datepicker editable" type="text"
@@ -56,7 +48,7 @@
     </div>
 
     <div class="control-group">
-      <label class="control-label" id="event-end-time">End time: </label>
+      <label class="control-label" id="event-end-time">Vége: </label>
       <div class="controls controls-row">
         <input id="event-end-input-date" name="event-end-input-date"
                class="input-small datepicker editable" type="text"
@@ -68,7 +60,7 @@
     </div>
 
     <div class="control-group">
-      <label class="control-label" id="event-detect-time">Detect time: </label>
+      <label class="control-label" id="event-detect-time">Észrevettük: </label>
       <div class="controls controls-row">
         <input id="event-detect-input-date" name="event-detect-input-date"
                class="input-small datepicker editable" type="text"
@@ -80,9 +72,9 @@
     </div>
 
    <div class="control-group">
-     <label class="control-label severity_levels" id="event-severity">Severity: </label>
+     <label class="control-label severity_levels" id="event-severity">Súlyosság: </label>
        <div class="controls controls-row">
-        <select id="severity-select" name="severity" class="input editable" title="
+        <select style="width: 350px;" id="severity-select" name="severity" class="input editable" title="
         <?php
            $config = Configuration::get_configuration();
            if (isset($config['severity']) && isset($config['severity']['tooltip_title'])) {
@@ -112,7 +104,7 @@
   <!-- Calculated Controls -->
   <div class="span6">
     <div class="control-group">
-      <label class="control-label"> Total impact time: </label>
+      <label class="control-label"> Időtartam: </label>
       <div class="controls controls-row">
         <input class="input-medium" id="impacttime" type="text"
           value="<?php echo $impacttime; ?>"
@@ -121,7 +113,7 @@
     </div>
 
     <div class="control-group">
-      <label class="control-label" id="time_undetected">Time undetected: </label>
+      <label class="control-label" id="time_undetected">Nem vettük észre: </label>
       <div class="controls controls-row">
         <input class="input-medium" id="undetecttime" type="text"
           value="<?php echo $undetecttime; ?>"
@@ -130,7 +122,7 @@
    </div>
 
    <div class="control-group">
-    <label class="control-label" id="resolve_time">Time to resolve: </label>
+    <label class="control-label" id="resolve_time">Javítás ideje: </label>
     <div class="controls controls-row">
       <input class="input-medium" id="resolvetime" type="text"
         value="<?php echo $resolvetime; ?>"

@@ -11,19 +11,19 @@
     $jira_keys = array_keys($jira_tickets);
 ?>
 <div class="row-fluid">
-<legend>Remediation</legend> 
+<legend>Kapcsolódó ticketek</legend> 
   
   <div class="editable_hidden" style="display:none;">
-  <div id="jira-link"><a href="<?php echo $jira_client->getJiraBaseUrl(); ?>/secure/CreateIssue!default.jspa" target="_new">Create New Issue</a></div>
-  <input type="text" placeholder="Enter JIRA key(s), separated by commas (i.e. CORE-2024, OPS-1453)" id="jira_key_input" name="jira_key_input" class="input-xxlarge" onblur="addTicket()">
+  <div id="jira-link"><a href="<?php echo $jira_client->getJiraBaseUrl(); ?>/secure/CreateIssue!default.jspa" target="_new">Új ticket</a></div>
+  <input type="text" placeholder="JIRA azonosító(k), vesszővel elválasztva (i.e. CORE-2024, OPS-1453)" id="jira_key_input" name="jira_key_input" class="input-xxlarge" onblur="addTicket()">
   </div>
 
   <table class="table table-striped">
     <thead>
       <tr>
-        <th>Key</th>
-        <th>Summary</th>
-        <th>Assignee</th>
+        <th>Azonosító</th>
+        <th>Leírás</th>
+        <th>Fejlesztő</th>
         <?php
         foreach ($jira_client->getAdditionalIssueFields() as $k => $v) {
             echo "<th class='jira_addition_field'>$k</th>";

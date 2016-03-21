@@ -8,8 +8,8 @@ if ($images['status'] == Images::OK) {
 }
 ?>
 <div class="row-fluid">
-<legend>Images</legend>
-<input type="text" placeholder="Enter image URL" id="image_url" name="image_url" class="input-xxlarge editable_hidden editable" value="<?php echo isset($image_url) ? $image_url : '' ?>" onblur="renderImage()"  style="display:none;"/>
+<legend>Képek</legend>
+<input type="text" placeholder="A kép URL-je" id="image_url" name="image_url" class="input-xxlarge editable_hidden editable" value="<?php echo isset($image_url) ? $image_url : '' ?>" onblur="renderImage()"  style="display:none;"/>
 <div id="image" class="image-sizing">
 <?php foreach ($images as $image) {
     echo "<div class=\"thumbnail\">";

@@ -1,6 +1,6 @@
 <div class="row-fluid">
   <a class="btn btn-large btn-block btn-primary btn-success" data-toggle="modal" href="#create" data-target="#create">
-    <i class="icon-plus icon-white"></i> Create
+    <i class="icon-plus icon-white"></i> Új postmortem
   </a>
 </div>
 <div class="row-fluid">
@@ -9,7 +9,7 @@
 <?php if (isset($tags)) : ?>
 <hr/>
 <div class="row-fluid" id="tag_row">
-	<b>Filter by Tags</b>
+	<b>Tagre szűrés</b>
   <?php
     if (isset($selected_tags) && count($selected_tags) > 0) {
       echo " (<a href=\"javascript:clearSelectedTags()\">Clear</a>)";

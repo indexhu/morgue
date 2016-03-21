@@ -1,6 +1,6 @@
 <!-- Postmortem History -->
 <div class="row-fluid">
-<legend style="margin-bottom:0px; border-bottom:none;">Postmortem History</legend>
+<legend style="margin-bottom:0px; border-bottom:none;">Szerkesztések</legend>
 <table class="table">
 <tbody>
 <?php 

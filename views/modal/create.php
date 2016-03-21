@@ -1,32 +1,32 @@
 <div class="modal fade" id="create" tabindex="-1" role="dialog" aria-labelledby="model_label" aria-hidden="true">
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-    <h3 id="model_label">Create</h3>
+    <h3 id="model_label">Új postmortem</h3>
   </div>
   <div class="modal-body">
     <form class="form-horizontal" method="post" action="/events">
       <div class="control-group">
-        <label class="control-label" for="title">Title</label>
+        <label class="control-label" for="title">Cím</label>
         <div class="controls">
-          <input type="text" placeholder="Title" id="title" name="title" class="input-xlarge">
+          <input type="text" placeholder="Cím" id="title" name="title" class="input-xlarge">
         </div>
       </div>
       <div class="control-group">
-        <label class="control-label" for="start_date">Start Time</label>
+        <label class="control-label" for="start_date">Kezdete</label>
         <div class="controls controls-row">
           <input id="start_date" name="start_date" class="input-small datepicker" type="text">
           <input id="start_time" name="start_time" class="input-mini timeentry" type="text">
         </div>
       </div>
       <div class="control-group">
-        <label class="control-label" for="end_date">End Time</label>
+        <label class="control-label" for="end_date">Vége</label>
         <div class="controls controls-row">
           <input id="end_date" name="end_date" class="input-small datepicker" type="text">
           <input id="end_time" name="end_time" class="input-mini timeentry" type="text">
         </div>
       </div>
       <div class="control-group">
-        <label class="control-label" for="detect_date">Detect Time</label>
+        <label class="control-label" for="detect_date">Észrevéve</label>
         <div class="controls controls-row">
           <input id="detect_date" name="detect_date" class="input-small datepicker" type="text">
           <input id="detect_time" name="detect_time" class="input-mini timeentry" type="text">
@@ -44,7 +44,7 @@
         </div>
       </div>
       <div class="control-group">
-        <label class="control-label" for="timezone">Timezone</label>
+        <label class="control-label" for="timezone">Időzóna</label>
         <div class="controls">
           <select id="timezone" name="timezone" class="input-large">
             <?php $timezones = DateTimeZone::listIdentifiers(); ?>
@@ -55,7 +55,7 @@
         </div>
       </div>
       <div class="control-group">
-      <label id="event-severity" class="control-label severity_levels" for="severity">Severity</label>
+      <label id="event-severity" class="control-label severity_levels" for="severity">Súlyosság</label>
         <div class="controls">
           <select id="severity-select" name="severity" class="input-small" title="
           <?php
@@ -63,7 +63,7 @@
           if (isset($config['severity']) && isset($config['severity']['tooltip_title'])) {
             echo $config['severity']['tooltip_title'];
           } else {
-            echo "Severity Levels";
+            echo "Súlyossági szintek";
           }
           ?>
           ">
@@ -79,11 +79,11 @@
         </div>
       </div>
 
-    <span id="titleinfo"> Title has to contain at least 3 characters </span>
+    <span id="titleinfo"> A cím legalább három betűs legyen </span>
   </div>
   <div class="modal-footer">
-    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-    <button class="btn btn-primary" type="submit" id="eventcreatebtn" >Create</button>
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Mégse</button>
+    <button class="btn btn-primary" type="submit" id="eventcreatebtn" >Létrehoz</button>
   </div>
   </form>
 </div>
@@ -114,8 +114,10 @@ $(document).ready(function () {
     $("#title").blur(function() {
         if ($("#title").attr("value").length > 2) {
             $("#eventcreatebtn").removeAttr("disabled");
+	    $("#titleinfo").hide();
         } else {
             $("#eventcreatebtn").attr("disabled", "true");
+	    $("#titleinfo").show();
         }
     });
 
