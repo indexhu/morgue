@@ -3,6 +3,7 @@
   <head>
     <meta name="csrf-token" content="$csrf_token" />
     <meta name="csrf-param" content="_csrf" />
+    <meta charset="utf-8" />
     <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="/assets/css/bootstrap-responsive.min.css" />
     <link rel="stylesheet" href="/assets/css/bootstrap-datepicker.css" />

@@ -310,6 +310,8 @@ $app->put('/events/:id', function ($id) use ($app) {
     $event = ["title" => $old_event["title"], "id" => $id];
 
     $params = $app->request->params();
+    //TODO: kideriteni hogy a timezone miert nem jon configbol, pedig benne van. Bocs a ganyolasert.
+    if (empty($params["timezone"])) { $params["timezone"] = "Europe/Budapest"; }
     foreach ($params as $key => $value) {
         switch($key) {
         case "title":
